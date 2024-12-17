@@ -17,9 +17,10 @@ const empolyeeSchema = new mongoose.Schema(
       ],
     },
     phone: {
-      type: Number,
-      unique: true,
+      type: String, // Changed from Number to String
       required: [true, "Phone number is required"],
+      minLength: 10,
+      maxLength: 10,
       match: [
         /^[0-9]{10}$/,
         "Phone number must be exactly 10 digits and contain only numbers",
