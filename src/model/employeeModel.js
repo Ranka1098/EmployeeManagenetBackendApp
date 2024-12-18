@@ -30,6 +30,9 @@ const empolyeeSchema = new mongoose.Schema(
       type: String,
       required: [true, "Department is required"],
     },
+    pohot: {
+      type: String,
+    },
     salary: {
       type: Number,
       required: [true, "Salary is required"],
