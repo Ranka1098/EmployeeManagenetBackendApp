@@ -11,7 +11,11 @@ const empRouter = express.Router();
 empRouter.post("/create", cloudFileUpload.single("profileImage"), createEmp);
 empRouter.get("/allEmp", allEmp);
 empRouter.get("/singleEmp/:id", singleEmp);
-empRouter.put("/updateEmp/:id", updateEmp);
+empRouter.put(
+  "/updateEmp/:id",
+  cloudFileUpload.single("profileImage"),
+  updateEmp
+);
 empRouter.delete("/deleteEmp/:id", deleteEmp);
 
 export default empRouter;
