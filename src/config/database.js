@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
 
 const connectDB = async () => {
-  const MONGODB_URL = process.env.MONGO_URL;
-  mongoose.connect(MONGODB_URL);
+  mongoose.connect(
+    "mongodb+srv://ashokranka30:sbX3Ei9LhwPmW.p@cluster0.zv0qp.mongodb.net/employeeManagementApp"
+  );
   console.log("mongoose is successfully connected");
 };
 

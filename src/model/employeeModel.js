@@ -2,10 +2,19 @@ import mongoose from "mongoose";
 
 const empolyeeSchema = new mongoose.Schema(
   {
-    name: {
+    firstname: {
       type: String,
       trim: true,
       required: [true, "name is required"],
+      minLength: 3,
+      maxLength: 20,
+    },
+    lastname: {
+      type: String,
+      trim: true,
+      required: [true, "surname is required"],
+      minLength: 3,
+      maxLength: 20,
     },
     email: {
       type: String,
@@ -30,13 +39,11 @@ const empolyeeSchema = new mongoose.Schema(
       type: String,
       required: [true, "Department is required"],
     },
-    pohot: {
-      type: String,
-    },
     salary: {
       type: Number,
       required: [true, "Salary is required"],
     },
+    profileImage: { type: String },
   },
   {
     timestamps: true,

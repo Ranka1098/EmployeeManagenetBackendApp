@@ -1,14 +1,20 @@
+import empModel from "../model/employeeModel.js";
+
 const createEmp = async (req, res) => {
   try {
     // 1. get data from body
-    const { name, email, phone, department, salary } = req.body;
+    const { firstname, lastname, email, phone, department, salary } = req.body;
+    let profileImage = req.file ? req.file.path : null;
+
     // this data save into employee model database
     const addEmp = new empModel({
-      name,
+      firstname,
+      lastname,
       email,
       phone,
       department,
       salary,
+      profileImage,
     });
     //   madel ko save karo
     const saveEmp = await addEmp.save();
