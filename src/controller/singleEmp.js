@@ -11,7 +11,6 @@ const singleEmp = async (req, res) => {
       res.status(200).json({ msg: "employee record found", data: singleEmp });
     }
   } catch (error) {
-    console.log("error :", error);
     res
       .status(500)
       .json({ msg: "error to find single epmolyee", error: error.msg });

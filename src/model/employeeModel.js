@@ -20,20 +20,10 @@ const empolyeeSchema = new mongoose.Schema(
       type: String,
       required: [true, "Email is required"],
       unique: true,
-      match: [
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        "Please provide a valid email address",
-      ],
     },
     phone: {
       type: String, // Changed from Number to String
       required: [true, "Phone number is required"],
-      minLength: 10,
-      maxLength: 10,
-      match: [
-        /^[0-9]{10}$/,
-        "Phone number must be exactly 10 digits and contain only numbers",
-      ],
     },
     department: {
       type: String,

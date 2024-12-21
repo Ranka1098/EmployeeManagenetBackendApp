@@ -7,7 +7,6 @@ const deleteEmp = async (req, res) => {
     const deletedEmp = await empModel.findByIdAndDelete(id);
     res.status(200).json({ msg: "employee is deleted successfully" });
   } catch (error) {
-    console.log("error :", error);
     res
       .status(500)
       .json({ msg: "employee is not deleted ", error: error.message });
